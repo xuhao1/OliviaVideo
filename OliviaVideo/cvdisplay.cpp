@@ -38,9 +38,9 @@ int cv_show_frame(uchar * data[],int height,int width)
     num++;
     cv::Mat res = frame2mat(data, height, width);
     cv::imshow("final", res);
-//    char path [1000];
-//    sprintf(path,"/Users/xuhao/data/frame%d.jpg",num);
-//    cv::imwrite(path, res);
+    char path [1000];
+    sprintf(path,"/Users/xuhao/data/frame%d.jpg",num);
+    cv::imwrite(path, res);
     cv::waitKey(30);
     printf("frame : %d\n",num);
     return 0;

@@ -152,7 +152,7 @@ void decode()
     
     /* find the mpeg1 video decoder */
     //codec = avcodec_find_decoder(AV_CODEC_ID_MPEG1VIDEO);
-    codec = avcodec_find_decoder(AV_CODEC_ID_H264);
+    codec = avcodec_find_decoder(AV_CODEC_ID_H265);
     
     
     if (!codec) {
