@@ -1,5 +1,6 @@
 #include "decoder.h"
 #include "cvdisplay.h"
+#include <vector>
 
 extern "C"
 {
@@ -11,13 +12,13 @@ extern "C"
 #include <libavutil/mathematics.h>
 #include <libavutil/samplefmt.h>
 };
-#define INBUF_SIZE 40960
 
+#define INBUF_SIZE 40960
 #define FILE_READING_BUFFER (1*1024*1024)
+
 static int _find_head(unsigned char *buffer, int len)
 {
-    int i;
-    int j;
+    int i = 0;
     
     for (i=512;i<len;i++)
     {
@@ -66,47 +67,6 @@ static void build_avpkt(AVPacket *avpkt, FILE *fp)
     readptr += nexthead;
 }
 
-static void pgm_save(unsigned char *buf, int wrap, int xsize, int ysize,
-                     char *filename)
-{
-    FILE *f;
-    int i;
-
-    f = fopen(filename,"w");
-    fprintf(f, "P5\n%d %d\n%d\n", xsize, ysize, 255);
-    for (i = 0; i < ysize; i++)
-        fwrite(buf + i * wrap, 1, xsize, f);
-    fclose(f);
-}
-
-
-static int decode_write_frame(const char *outfilename, AVCodecContext *avctx,
-                              AVFrame *frame, int *frame_count, AVPacket *pkt, int last)
-{
-    int len, got_frame;
-    char buf[10240];
-
-    len = avcodec_decode_video2(avctx, frame, &got_frame, pkt);
-    if (len < 0) {
-        fprintf(stderr, "Error while decoding frame %d\n", *frame_count);
-        return len;
-    }
-    if (got_frame) {
-        printf("Saving %sframe %3d\n", last ? "last " : "", *frame_count);
-        fflush(stdout);
-
-        /* the picture is allocated by the decoder, no need to free it */
-        snprintf(buf, sizeof(buf), outfilename, *frame_count);
-        pgm_save(frame->data[0], frame->linesize[0],
-                 avctx->width, avctx->height, buf);
-        (*frame_count)++;
-    }
-    if (pkt->data) {
-        pkt->size -= len;
-        pkt->data += len;
-    }
-    return 0;
-}
 
 int decode_frame(AVCodecContext * avctx,AVFrame * frame,AVPacket * pkt)
 {
@@ -152,7 +112,7 @@ void decode()
     
     /* find the mpeg1 video decoder */
     //codec = avcodec_find_decoder(AV_CODEC_ID_MPEG1VIDEO);
-    codec = avcodec_find_decoder(AV_CODEC_ID_H265);
+    codec = avcodec_find_decoder(AV_CODEC_ID_H264);
     
     
     if (!codec) {
@@ -201,7 +161,6 @@ void decode()
         i ++ ;
         //avpkt.size = fread(inbuf, 1, INBUF_SIZE, f);
         build_avpkt(&avpkt, f);
-        printf("size :%d\n",avpkt.size);
         
         if (avpkt.size == 0)
             break;
