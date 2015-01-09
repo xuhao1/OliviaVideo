@@ -10,6 +10,8 @@
 #include "decoder.h"
 #include <opencv2/opencv.hpp>
 #include "stdio.h"
+#include "stream_reciver.h"
+
 int init_cv()
 {
     return 0;
@@ -39,13 +41,5 @@ int cv_show_frame(uchar * data[],int height,int width)
     cv::Mat res = frame2mat(data, height, width);
     cv::imshow("final", (cv::InputArray) res);
     cv::waitKey(30);
-    printf("frame : %d\n",num);
-    return 0;
-}
-
-int main()
-{
-    printf("hello,world");
-    decode();
     return 0;
 }
