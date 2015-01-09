@@ -63,6 +63,7 @@ int stream_reciver::test()
     {
         data_pack * tmp = rec();
         proc_frame(tmp);
+        delete tmp;
     }
     return 0;
 }
@@ -122,7 +123,7 @@ void stream_reciver::complete_frame(data_pack * tmp)
     if(frame->count == frame->pkt_num)
     {
         callback(frame->data,frame->size,frame->id);
-        printf("Complete id:%4d count :%3d frame_num:%3d \n",frame->id,frame->count,frame->pkt_num);
+        printf("Complete id:%4d count :%3d frame_num:%3d size:%6d\n",frame->id,frame->count,frame->pkt_num,frame->size);
     }
 }
 

@@ -45,8 +45,8 @@ int test()
             cv::putText(frame, text, textOrg, fontFace, fontScale,
                         cv::Scalar::all(255), thickness, 8);
             
-            cv::imshow("current", decoder.current);
-            cv::waitKey(10);
+           // cv::imshow("current", decoder.current);
+            //cv::waitKey(30);
         }
     };
     
