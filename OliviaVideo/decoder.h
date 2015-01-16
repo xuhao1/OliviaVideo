@@ -57,6 +57,4 @@ public:
     
 };
 
-void test_decoder();
-void decode();
 #endif // DECODER_H

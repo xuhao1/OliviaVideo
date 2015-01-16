@@ -13,7 +13,7 @@
 #include <functional>
 #include <thread>
 
-int test()
+std::thread * test()
 {
     stream_decoder decoder;
     auto f = [&](uchar* data,int len,int id)
@@ -33,7 +33,7 @@ int test()
             char text[100];
             sprintf(text, "current:%3d",decoder.id);
             int fontFace = cv::FONT_HERSHEY_PLAIN;
-            double fontScale = 2;
+            double fontScale = 10;
             int thickness = 3;
             cv::Mat frame =decoder.getCurrent();
             int baseline=0;
@@ -45,8 +45,8 @@ int test()
             cv::putText(frame, text, textOrg, fontFace, fontScale,
                         cv::Scalar::all(255), thickness, 8);
             
-           // cv::imshow("current", decoder.current);
-            //cv::waitKey(30);
+            cv::imshow("current", decoder.current);
+            cv::waitKey(30);
         }
     };
     
@@ -55,10 +55,9 @@ int test()
         rc.test();
     };
     
-    std :: thread t_rc(f_rc);
+    std :: thread * t_rc= new std::thread(f_rc);
     show();
-    t_rc.join();
-    return 0;
+    return t_rc;
 }
 
 int test_networking()
@@ -72,6 +71,9 @@ int main()
 {
     printf("starting recv\n");
     test();
+    while (true) {
+        ;
+    }
     //test_networking();
 //    test_decoder();
     //decode();

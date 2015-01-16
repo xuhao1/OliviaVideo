@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>iOVideo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>test_quartz.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,36 @@
 			<true/>
 		</dict>
 		<key>69129CDD1A22645400D1B7D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>69284A3E1A604E7500C171AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>69284A4D1A604E7500C171AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6949AB751A602D580099B064</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6949AB841A602D580099B064</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>69E259A31A6294F30096C8E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>69E259B21A6294F30096C8E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
