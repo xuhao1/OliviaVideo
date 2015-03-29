@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		690BC7571A62B1720057023F /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690BC7561A62B1720057023F /* Quartz.framework */; };
+		69107E871AC33FB000EAEC41 /* imgs in Resources */ = {isa = PBXBuildFile; fileRef = 69107E861AC33FB000EAEC41 /* imgs */; };
 		69129CE51A22645400D1B7D3 /* OliviaVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69129CE41A22645400D1B7D3 /* OliviaVideoTests.swift */; };
 		69284A441A604E7500C171AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69284A431A604E7500C171AB /* AppDelegate.swift */; };
 		69284A461A604E7500C171AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69284A451A604E7500C171AB /* Images.xcassets */; };
@@ -208,7 +209,6 @@
 		698586D51A5F42FB006EA76B /* decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 698586D41A5F42FB006EA76B /* decoder.cpp */; };
 		698586D71A5FD0FF006EA76B /* file_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 698586D61A5FD0FF006EA76B /* file_decoder.cpp */; };
 		698586DA1A5FD31E006EA76B /* stream_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 698586D81A5FD31E006EA76B /* stream_decoder.cpp */; };
-		698603831A62AC4E00E415E3 /* quartz_view_control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698603821A62AC4E00E415E3 /* quartz_view_control.swift */; };
 		699C4D4F1A5E9DDD00D69586 /* libavcodec.56.13.100.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4D2B1A5E9DDD00D69586 /* libavcodec.56.13.100.dylib */; };
 		699C4D501A5E9DDD00D69586 /* libavcodec.56.13.100.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4D2C1A5E9DDD00D69586 /* libavcodec.56.13.100.dylib */; };
 		699C4D511A5E9DDD00D69586 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4D2D1A5E9DDD00D69586 /* libavcodec.a */; };
@@ -245,7 +245,6 @@
 		699C4D701A5E9DDD00D69586 /* libswscale.3.1.101.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4D4C1A5E9DDD00D69586 /* libswscale.3.1.101.dylib */; };
 		699C4D711A5E9DDD00D69586 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4D4D1A5E9DDD00D69586 /* libswscale.a */; };
 		699C4D721A5E9DDD00D69586 /* libswscale.3.1.101.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C4D4E1A5E9DDD00D69586 /* libswscale.3.1.101.dylib */; };
-		699C4D771A5EE9EE00D69586 /* c_style_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 699C4D751A5EE9EE00D69586 /* c_style_decoder.cpp */; };
 		699C4D7A1A5EEF8700D69586 /* stream_reciver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 699C4D781A5EEF8700D69586 /* stream_reciver.cpp */; };
 		699C4D801A5EF7A000D69586 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 699C4D7F1A5EF7A000D69586 /* main.cpp */; };
 		699E7B5F1A30E73200B7CFD7 /* cvdisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 699E7B5D1A30E73200B7CFD7 /* cvdisplay.cpp */; };
@@ -286,10 +285,7 @@
 		699E7BCA1A30E84300B7CFD7 /* libopencv_video.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E7B931A30E84300B7CFD7 /* libopencv_video.2.4.9.dylib */; };
 		699E7BCC1A30E84300B7CFD7 /* libopencv_videostab.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E7B951A30E84300B7CFD7 /* libopencv_videostab.2.4.9.dylib */; };
 		699E7BCD1A30E84300B7CFD7 /* libopencv_videostab.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E7B961A30E84300B7CFD7 /* libopencv_videostab.2.4.9.dylib */; };
-		69E259A91A6294F30096C8E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E259A81A6294F30096C8E7 /* AppDelegate.swift */; };
-		69E259AB1A6294F30096C8E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E259AA1A6294F30096C8E7 /* Images.xcassets */; };
-		69E259AE1A6294F30096C8E7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69E259AC1A6294F30096C8E7 /* MainMenu.xib */; };
-		69E259BA1A6294F30096C8E7 /* test_quartzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E259B91A6294F30096C8E7 /* test_quartzTests.swift */; };
+		69ECD8D11A9614850067E9FC /* view_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ECD8D01A9614850067E9FC /* view_test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +321,7 @@
 
 /* Begin PBXFileReference section */
 		690BC7561A62B1720057023F /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		69107E861AC33FB000EAEC41 /* imgs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imgs; path = resources/imgs; sourceTree = "<group>"; };
 		69129CCE1A22645400D1B7D3 /* OliviaVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OliviaVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69129CDE1A22645400D1B7D3 /* OliviaVideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OliviaVideoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69129CE31A22645400D1B7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -346,9 +343,8 @@
 		6949AB851A602D580099B064 /* oliviaosxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oliviaosxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		698586D41A5F42FB006EA76B /* decoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = decoder.cpp; path = OliviaVideo/decoder.cpp; sourceTree = "<group>"; };
 		698586D61A5FD0FF006EA76B /* file_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file_decoder.cpp; path = OliviaVideo/file_decoder.cpp; sourceTree = "<group>"; };
-		698586D81A5FD31E006EA76B /* stream_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stream_decoder.cpp; sourceTree = "<group>"; };
+		698586D81A5FD31E006EA76B /* stream_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stream_decoder.cpp; path = OliviaVideo/stream_decoder.cpp; sourceTree = "<group>"; };
 		698586D91A5FD31E006EA76B /* stream_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stream_decoder.h; path = OliviaVideo/stream_decoder.h; sourceTree = "<group>"; };
-		698603821A62AC4E00E415E3 /* quartz_view_control.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quartz_view_control.swift; sourceTree = "<group>"; };
 		699C4D2B1A5E9DDD00D69586 /* libavcodec.56.13.100.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavcodec.56.13.100.dylib; path = /usr/local/Cellar/ffmpeg/2.5.2/lib/libavcodec.56.13.100.dylib; sourceTree = "<absolute>"; };
 		699C4D2C1A5E9DDD00D69586 /* libavcodec.56.13.100.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavcodec.56.13.100.dylib; path = /usr/local/Cellar/ffmpeg/2.5.2/lib/libavcodec.56.13.100.dylib; sourceTree = "<absolute>"; };
 		699C4D2D1A5E9DDD00D69586 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = /usr/local/Cellar/ffmpeg/2.5.2/lib/libavcodec.a; sourceTree = "<absolute>"; };
@@ -385,7 +381,6 @@
 		699C4D4C1A5E9DDD00D69586 /* libswscale.3.1.101.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswscale.3.1.101.dylib; path = /usr/local/Cellar/ffmpeg/2.5.2/lib/libswscale.3.1.101.dylib; sourceTree = "<absolute>"; };
 		699C4D4D1A5E9DDD00D69586 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = /usr/local/Cellar/ffmpeg/2.5.2/lib/libswscale.a; sourceTree = "<absolute>"; };
 		699C4D4E1A5E9DDD00D69586 /* libswscale.3.1.101.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswscale.3.1.101.dylib; path = /usr/local/Cellar/ffmpeg/2.5.2/lib/libswscale.3.1.101.dylib; sourceTree = "<absolute>"; };
-		699C4D751A5EE9EE00D69586 /* c_style_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = c_style_decoder.cpp; path = OliviaVideo/c_style_decoder.cpp; sourceTree = "<group>"; };
 		699C4D781A5EEF8700D69586 /* stream_reciver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stream_reciver.cpp; path = OliviaVideo/stream_reciver.cpp; sourceTree = "<group>"; };
 		699C4D791A5EEF8700D69586 /* stream_reciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stream_reciver.h; path = OliviaVideo/stream_reciver.h; sourceTree = "<group>"; };
 		699C4D7F1A5EF7A000D69586 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -447,13 +442,8 @@
 		699E7B951A30E84300B7CFD7 /* libopencv_videostab.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.2.4.9.dylib; path = /usr/local/Cellar/opencv/2.4.9/lib/libopencv_videostab.2.4.9.dylib; sourceTree = "<absolute>"; };
 		699E7B961A30E84300B7CFD7 /* libopencv_videostab.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.2.4.9.dylib; path = /usr/local/Cellar/opencv/2.4.9/lib/libopencv_videostab.2.4.9.dylib; sourceTree = "<absolute>"; };
 		69E259A41A6294F30096C8E7 /* test_quartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test_quartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E259A71A6294F30096C8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69E259A81A6294F30096C8E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69E259AA1A6294F30096C8E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		69E259AD1A6294F30096C8E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		69E259B31A6294F30096C8E7 /* test_quartzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test_quartzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E259B81A6294F30096C8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69E259B91A6294F30096C8E7 /* test_quartzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_quartzTests.swift; sourceTree = "<group>"; };
+		69ECD8D01A9614850067E9FC /* view_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = view_test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -793,14 +783,13 @@
 		69129CC51A22645400D1B7D3 = {
 			isa = PBXGroup;
 			children = (
+				69107E861AC33FB000EAEC41 /* imgs */,
 				690BC7561A62B1720057023F /* Quartz.framework */,
 				6949AB931A602D9C0099B064 /* common */,
 				69129D3B1A2264C800D1B7D3 /* LIB */,
 				69129CD01A22645400D1B7D3 /* OliviaVideo */,
 				69284A401A604E7500C171AB /* iOVideo */,
 				69284A511A604E7500C171AB /* iOVideoTests */,
-				69E259A51A6294F30096C8E7 /* test_quartz */,
-				69E259B61A6294F30096C8E7 /* test_quartzTests */,
 				69129CCF1A22645400D1B7D3 /* Products */,
 				69129CE11A22645400D1B7D3 /* OliviaVideoTests */,
 			);
@@ -824,7 +813,6 @@
 		69129CD01A22645400D1B7D3 /* OliviaVideo */ = {
 			isa = PBXGroup;
 			children = (
-				698586D81A5FD31E006EA76B /* stream_decoder.cpp */,
 				699E7B5D1A30E73200B7CFD7 /* cvdisplay.cpp */,
 				699E7B5E1A30E73200B7CFD7 /* cvdisplay.h */,
 				699C4D7F1A5EF7A000D69586 /* main.cpp */,
@@ -954,6 +942,7 @@
 				69284ACB1A6050DC00C171AB /* bridge_core.mm */,
 				69284ACD1A6050DC00C171AB /* oliviaosx-Bridging-Header.h */,
 				69284A431A604E7500C171AB /* AppDelegate.swift */,
+				69ECD8D01A9614850067E9FC /* view_test.swift */,
 				69284A451A604E7500C171AB /* Images.xcassets */,
 				69284A471A604E7500C171AB /* MainMenu.xib */,
 				69284A411A604E7500C171AB /* Supporting Files */,
@@ -989,53 +978,16 @@
 		6949AB931A602D9C0099B064 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				698586D81A5FD31E006EA76B /* stream_decoder.cpp */,
 				698586D61A5FD0FF006EA76B /* file_decoder.cpp */,
 				69129D3C1A2267C900D1B7D3 /* decoder.cpp */,
 				698586D91A5FD31E006EA76B /* stream_decoder.h */,
 				699C4D791A5EEF8700D69586 /* stream_reciver.h */,
 				699C4D781A5EEF8700D69586 /* stream_reciver.cpp */,
-				699C4D751A5EE9EE00D69586 /* c_style_decoder.cpp */,
 				69129D451A226CCA00D1B7D3 /* decoder.h */,
 				698586D41A5F42FB006EA76B /* decoder.cpp */,
 			);
 			name = common;
-			sourceTree = "<group>";
-		};
-		69E259A51A6294F30096C8E7 /* test_quartz */ = {
-			isa = PBXGroup;
-			children = (
-				69E259A81A6294F30096C8E7 /* AppDelegate.swift */,
-				69E259AA1A6294F30096C8E7 /* Images.xcassets */,
-				69E259AC1A6294F30096C8E7 /* MainMenu.xib */,
-				69E259A61A6294F30096C8E7 /* Supporting Files */,
-				698603821A62AC4E00E415E3 /* quartz_view_control.swift */,
-			);
-			path = test_quartz;
-			sourceTree = "<group>";
-		};
-		69E259A61A6294F30096C8E7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				69E259A71A6294F30096C8E7 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		69E259B61A6294F30096C8E7 /* test_quartzTests */ = {
-			isa = PBXGroup;
-			children = (
-				69E259B91A6294F30096C8E7 /* test_quartzTests.swift */,
-				69E259B71A6294F30096C8E7 /* Supporting Files */,
-			);
-			path = test_quartzTests;
-			sourceTree = "<group>";
-		};
-		69E259B71A6294F30096C8E7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				69E259B81A6294F30096C8E7 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1266,6 +1218,7 @@
 			files = (
 				69284A461A604E7500C171AB /* Images.xcassets in Resources */,
 				69284A491A604E7500C171AB /* MainMenu.xib in Resources */,
+				69107E871AC33FB000EAEC41 /* imgs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1294,8 +1247,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E259AB1A6294F30096C8E7 /* Images.xcassets in Resources */,
-				69E259AE1A6294F30096C8E7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1314,7 +1265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				698586D51A5F42FB006EA76B /* decoder.cpp in Sources */,
-				699C4D771A5EE9EE00D69586 /* c_style_decoder.cpp in Sources */,
 				698586D71A5FD0FF006EA76B /* file_decoder.cpp in Sources */,
 				699C4D7A1A5EEF8700D69586 /* stream_reciver.cpp in Sources */,
 				699C4D801A5EF7A000D69586 /* main.cpp in Sources */,
@@ -1339,6 +1289,7 @@
 				69284AD01A60517900C171AB /* file_decoder.cpp in Sources */,
 				69284A5C1A604F1300C171AB /* decoder.cpp in Sources */,
 				69284ACE1A6050DC00C171AB /* bridge_core.mm in Sources */,
+				69ECD8D11A9614850067E9FC /* view_test.swift in Sources */,
 				69284A5E1A604F1300C171AB /* stream_decoder.cpp in Sources */,
 				69284A611A604F1400C171AB /* stream_reciver.cpp in Sources */,
 				69284A441A604E7500C171AB /* AppDelegate.swift in Sources */,
@@ -1375,8 +1326,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E259A91A6294F30096C8E7 /* AppDelegate.swift in Sources */,
-				698603831A62AC4E00E415E3 /* quartz_view_control.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,7 +1333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E259BA1A6294F30096C8E7 /* test_quartzTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,14 +1366,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				69284A481A604E7500C171AB /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		69E259AC1A6294F30096C8E7 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				69E259AD1A6294F30096C8E7 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -1528,9 +1468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/ffmpeg/2.3.2/lib,
 					/usr/local/Cellar/opencv/2.4.9/lib,
-					/usr/local/Cellar/ffmpeg/2.4.2/lib,
 					/usr/local/Cellar/ffmpeg/2.5.2/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1556,9 +1494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/ffmpeg/2.3.2/lib,
 					/usr/local/Cellar/opencv/2.4.9/lib,
-					/usr/local/Cellar/ffmpeg/2.4.2/lib,
 					/usr/local/Cellar/ffmpeg/2.5.2/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

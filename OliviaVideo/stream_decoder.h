@@ -20,9 +20,11 @@ class stream_decoder:public h264_decoder
     AVPacket * build_avpkt(uchar *,int);
 public:
     int id = 0;
-    stream_decoder():
+    stream_decoder(const char * _path):
         h264_decoder()
     {
+        strcpy(path, _path);
+        current = cv::imread(path);
     }
     
     void process(uchar*,int);

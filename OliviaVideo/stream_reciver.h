@@ -54,11 +54,13 @@ struct data_pack
 
 struct frame_pkt
 {
-    uchar data[32*1024];
+    uchar data[128*1024];
     int size;
     int count = 0;
     int pkt_num = 0;
     int id;
+    long rec_time = 0;
+    bool pubed = false;
 };
 
 
@@ -71,18 +73,23 @@ class stream_reciver
     
     int ptr_frame;
     int la_id_f;
+    int last_pub=0,last_pub_ptr=0;
     void proc_frame(data_pack *tmp);
     frame_pkt *  new_pkt_frame(data_pack *);
     frame_callback callback;
+    
+    void frame_finish_callback(frame_pkt*,int);
+    
+    void reset(data_pack*);
     
 public:
     
     stream_reciver(int port);
     stream_reciver(int port,frame_callback f);
     
-    std::vector<frame_pkt*> rec_list;
+    std::vector<frame_pkt> rec_list;
     data_pack* rec();
-    void complete_frame(data_pack*);
+    void resume_frame(data_pack*);
     int test();
     
     int process();

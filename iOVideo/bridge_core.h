@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @interface rec_core : NSObject
 {
@@ -18,5 +19,6 @@
 }
     - (char *) getCurrent;
     - (id) init :(int) port;
+    - (NSImage *) getCurrentImg;
 @end
 #endif /* defined(__OliviaVideo__brigde_core__) */

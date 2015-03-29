@@ -7,7 +7,19 @@
 //
 
 #include "stream_reciver.h"
-#define LIST_SIZE 256
+#include "sys/time.h"
+
+
+
+#define LIST_SIZE 1024
+#define MAX_WAIT 200000
+
+long getCurrentTime()
+{
+    struct timeval tv;
+    gettimeofday(&tv,NULL);
+    return tv.tv_sec * 1000000 + tv.tv_usec;
+}
 
 stream_reciver::stream_reciver(int port)
 {
@@ -47,10 +59,11 @@ stream_reciver::stream_reciver(int port,frame_callback f):
 data_pack * stream_reciver::rec()
 {
     
+    
     bzero(buffer,sizeof(buffer));
     
     int len =(int) recvfrom(sockfd,(void*)buffer,sizeof(buffer), 0 , (struct sockaddr *)&addr ,(socklen_t *)&addr_len);
-    
+    //printf("gotta %d\n",len);
     data_pack * tmp = new data_pack;
     tmp->fromBuf(buffer, len);
     
@@ -59,11 +72,18 @@ data_pack * stream_reciver::rec()
  
 int stream_reciver::test()
 {
+    static long la = getCurrentTime();
     while(1)
     {
         data_pack * tmp = rec();
+        if (getCurrentTime() - la > 1000000)
+        {
+            printf("timeout");
+            reset(tmp);
+        }
         proc_frame(tmp);
         delete tmp;
+        la = getCurrentTime();
     }
     return 0;
 }
@@ -77,53 +97,82 @@ frame_pkt * stream_reciver::new_pkt_frame(data_pack * tmp)
         ptr_frame = 0;
     }
     
-    if (rec_list[ptr_frame]!=nullptr)
-    {
-        delete rec_list[ptr_frame];
-        rec_list[ptr_frame] = nullptr;
-    }
-    
-    rec_list[ptr_frame] = new frame_pkt;
-    
-    auto res = rec_list[ptr_frame];
+    auto res = &rec_list[ptr_frame];
     
     res->size = tmp->len_f;
-    //res->data = new uchar(2*res->size);
+    
     res->pkt_num = tmp->num_f;
     res->count =1;
     res->id = tmp->idf;
+    res->rec_time = getCurrentTime();
+    res->pubed = false;
     
     memcpy(res->data, tmp->data, tmp->size_of_pack);
+    
     
     return res;
 }
 
-void stream_reciver::complete_frame(data_pack * tmp)
+void stream_reciver::frame_finish_callback(frame_pkt * frame,int this_ptr)
+{
+    
+    
+    long time = getCurrentTime();
+    
+    int i = last_pub_ptr;
+    if (i>this_ptr)
+    {
+        i -= LIST_SIZE;
+    }
+    while  (i <= this_ptr)
+    {
+        i ++;
+        
+        int ptr = i;
+        
+        if (i<0)
+        {
+            ptr +=LIST_SIZE;
+        }
+        
+        frame_pkt * fm = &rec_list[ptr];
+        if (
+            (time - fm->rec_time > MAX_WAIT || fm->count == fm->pkt_num)
+            && !fm->pubed &&fm->id !=0 )
+        {
+            if (fm->count!=fm->pkt_num)
+                printf("frame ptr:%4d id :%4d delay:%3ld count:%3d/%3d\n",ptr,fm->id,(time - fm->rec_time)/1000,fm->count,fm->pkt_num);
+            last_pub = fm->id;
+            last_pub_ptr = ptr ;
+            fm->pubed = true;
+            callback(fm->data,fm->size,fm->id);
+        }
+    }
+}
+
+void stream_reciver::resume_frame(data_pack * tmp)
 {
     int frame_id = tmp->idf;
     int pkt_id = tmp->id_f_p;
-    int id = 0;
-    id = ptr_frame - (la_id_f - frame_id);
+    int this_ptr = 0;
+    this_ptr = ptr_frame - (la_id_f - frame_id);
     
-    if (id<0)
+    if (this_ptr<0)
     {
-        id += LIST_SIZE;
+        this_ptr += LIST_SIZE;
     }
     
-    //printf("id :%d \n",id);
     
-    frame_pkt * frame = rec_list[id];
-    
-    //printf("id :%3d frame :size:%3d\n",id,frame->id);
+    frame_pkt * frame = &rec_list[this_ptr];
     
     memcpy(frame->data + pkt_id * tmp->size_of_pack,tmp->data,tmp->size_of_pack);
     
     frame->count ++;
     
-    if(frame->count == frame->pkt_num)
+    
+    if(frame->count == frame->pkt_num && frame_id > last_pub)
     {
-        callback(frame->data,frame->size,frame->id);
-        printf("Complete id:%4d count :%3d frame_num:%3d size:%6d\n",frame->id,frame->count,frame->pkt_num,frame->size);
+        frame_finish_callback(frame,this_ptr);
     }
 }
 
@@ -135,6 +184,14 @@ void stream_reciver::proc_frame(data_pack * tmp)
     }
     else
     {
-        complete_frame(tmp);
+        resume_frame(tmp);
     }
+}
+
+void stream_reciver::reset(data_pack * tmp)
+{
+    la_id_f = tmp->idf;
+    last_pub = tmp->idf;
+    last_pub_ptr = 0;
+    ptr_frame = 0;
 }

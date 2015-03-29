@@ -57,20 +57,29 @@ int h264_decoder::init()
     }
     
     frame_count = 0;
-    current = cv::imread("/Users/xuhao/a.png");
     
     return 0;
 }
 h264_decoder::h264_decoder()
 {
     init();
+    strcpy(path, "/Users/xuhao/data/a.jpg");
+    current = cv::imread(path);
 }
 cv::Mat h264_decoder::getCurrent()
 {
     mtx.lock();
     cv::Mat frame = current.clone();
     mtx.unlock();
-    return current;
+    return frame;
+}
+cv::Mat h264_decoder::getCurrentRGB()
+{
+    mtx.lock();
+    cv::Mat frame = current.clone();
+    mtx.unlock();
+    cv::cvtColor(frame, frame, CV_BGR2RGB);
+    return frame;
 }
 int h264_decoder::_find_head(uchar *buffer, int len)
 {

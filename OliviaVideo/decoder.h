@@ -27,6 +27,7 @@ protected:
     std::mutex mtx;
     
     int init();
+    char path[1000];
     
     cv::Mat decode_frame(AVPacket * pkt);
     cv::Mat convert2mat(uchar **data,int height,int width);
@@ -42,6 +43,7 @@ protected:
     
 public:
     cv::Mat getCurrent();
+    cv::Mat getCurrentRGB();
     cv::Mat current;
 };
 

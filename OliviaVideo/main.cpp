@@ -23,7 +23,7 @@ std::thread * test()
         decoder.id = id;
     };
     
-    stream_reciver rc(7777,f);
+    stream_reciver rc(7890,f);
     
     auto show= [&]
     {
@@ -62,7 +62,7 @@ std::thread * test()
 
 int test_networking()
 {
-    stream_reciver rc(7777);
+    stream_reciver rc(7890);
     rc.test();
     return 0;
 }
