@@ -11,6 +11,7 @@
 #include <string>
 #include <opencv2/opencv.hpp>
 #include <functional>
+#include <mutex>
 extern "C"
 {
 #include <libavutil/opt.h>
@@ -22,7 +23,7 @@ extern "C"
 #include <libavutil/samplefmt.h>
 }
 
-#define ONE_M 1000000
+#define ONE_M 1048576
 
 class encoder
 {
@@ -30,9 +31,10 @@ private:
     int ki=0;
     AVCodecContext * c =nullptr;
     AVFrame * frame  = nullptr;
-    bool running = true ;
 protected:
     std::function<int(char*,int)> fwrite;
+    std::mutex pause_lock;
+    bool running = true;
 public:
     int height , width;
     AVCodec *codec;
@@ -43,7 +45,7 @@ public:
     void encodeframe();
     int write();
     int reset();
-    int bit_rate = 2 * ONE_M;
+    int bit_rate;
     void stop();
     
 };
@@ -54,7 +56,15 @@ private:
     std::function<cv::Mat()> getFrame;
 public:
     uchar ** get_data();
-    CV_encoder(std::function<cv::Mat()>,std::function<int(char*,int)> );
+    CV_encoder(std::function<cv::Mat()>,std::function<int(char*,int)>,float rate_m );
+    void start()
+    {
+        pause_lock.unlock();
+    }
+    void stop()
+    {
+        pause_lock.lock();
+    }
 };
 
 

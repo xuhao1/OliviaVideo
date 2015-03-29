@@ -21,7 +21,7 @@
 #include <vector>
 #include <stdint.h>
 #define BUFLEN 512
-#define PACK_SIZE 256
+#define PACK_SIZE 512
 #define EXTRA_LEN 24
 
 using namespace std;

@@ -10,6 +10,8 @@
 	<string>oliviacapture</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>ACC26834921C2FED15D93170EB6C09FA3082CD5F</key>
+		<string>https://github.com/xuhao1/OliviaVideo.git</string>
 		<key>FEC2A2B29EEA4344F018C71BF9BF2B5D7932A773</key>
 		<string>gitcafe.com:xuhao1/oliviacapture.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>oliviacapture.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>ACC26834921C2FED15D93170EB6C09FA3082CD5F</key>
+		<string>../../..</string>
 		<key>FEC2A2B29EEA4344F018C71BF9BF2B5D7932A773</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>FEC2A2B29EEA4344F018C71BF9BF2B5D7932A773</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ACC26834921C2FED15D93170EB6C09FA3082CD5F</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

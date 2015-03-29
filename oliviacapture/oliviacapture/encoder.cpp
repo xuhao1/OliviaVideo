@@ -58,8 +58,8 @@ int encoder::init()
     frame->format = c->pix_fmt;
     frame->width  = c->width;
     frame->height = c->height;
-    
-    ret = av_image_alloc(frame->data, frame->linesize, c->width, c->height,
+
+    ret = av_image_alloc((uint8_t **)frame->data,(int*) frame->linesize, c->width, c->height,
                              c->pix_fmt, 32);
     if (ret < 0) {
         fprintf(stderr, "Could not allocate raw picture buffer\n");
@@ -170,10 +170,12 @@ int encoder::write()
 void encoder::run()
 {
     running = true;
-    
+
     while(running)
     {
+        pause_lock.lock();
         write();
+        pause_lock.unlock();
     }
     
     avcodec_close(c);
@@ -183,12 +185,18 @@ void encoder::stop()
     running = false;
 }
 
-CV_encoder::CV_encoder(std::function<cv::Mat()> getFrame,std::function<int(char*,int)> fwrite)
+CV_encoder::CV_encoder(std::function<cv::Mat()> getFrame,std::function<int(char*,int)> fwrite,float rate_m)
 {
+    this->bit_rate = rate_m * ONE_M;
+
     while (init()!=0)
         fprintf(stderr, "init failed ,try again");
+
+    printf("init encoder with bit rate %3fM successful\n",rate_m);
     this->getFrame = getFrame;
     this->fwrite = fwrite;
+
+    pause_lock.lock();
     //GETFRAME SHOULD BE RGB
 }
 
